@@ -1,6 +1,6 @@
 <?php
 namespace studycs\wxpay\config;
-use app\helpers\Html;
+use studycs\wxpay\helper\Html;
 /**
  * Class WxComPay
  * @package app\paySdk
