@@ -1,11 +1,12 @@
 <?php
 namespace studycs\wxpay\config;
 use studycs\wxpay\sdk\WxPayApi;
+use studycs\wxpay\sdk\WxPayNotify;
 use studycs\wxpay\sdk\WxPayConfig;
-use studycs\wxpay\sdk\WxPayNotifyResults;
 use studycs\wxpay\sdk\WxPayOrderQuery;
+use studycs\wxpay\sdk\WxPayNotifyResults;
 
-class WxNotify extends \studycs\wxpay\sdk\WxPayNotify
+class WxNotify extends WxPayNotify
 {
     /**
      * @param $transaction_id

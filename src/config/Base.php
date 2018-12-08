@@ -1,18 +1,20 @@
 <?php
 namespace studycs\wxpay\config;
+use studycs\wxpay\helper\Html;
+
 /**
  * Class Base
  * @package app\paySdk
  */
 class  Base
 {
-    const KEY   = '10imZ9BQ7ofmgkeQ2lKPPwymNSZ0HUaw';
-    const MCHID = '1263709801';
-    const RPURL = 'https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack';
-    const APPID = 'wx3fcdce24657ca31e';
-    const CODEURL   = 'https://open.weixin.qq.com/connect/oauth2/authorize?';
-    const OPENIDURL = 'https://api.weixin.qq.com/sns/oauth2/access_token?';
-    const SECRET    = '3bdafdf3ae1a020c632c0c9ec23d4fca';
+    private $key   = '10imZ9BQ7ofmgkeQ2lKPPwymNSZ0HUaw';
+    private $mchId = '1263709801';
+    private $RPURL = 'https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack';
+    private $APPID = 'wx3fcdce24657ca31e';
+    private $CODEURL   = 'https://open.weixin.qq.com/connect/oauth2/authorize?';
+    private $OPENIDURL = 'https://api.weixin.qq.com/sns/oauth2/access_token?';
+    private $SECRET    = '3bdafdf3ae1a020c632c0c9ec23d4fca';
     /**
      * 获取签名
      * @param array $arr
@@ -25,7 +27,7 @@ class  Base
             unset($arr['sign']);
         }
         ksort($arr);
-        $str = $this->arrToUrl($arr) . '&key=' . self::KEY;
+        $str = $this->arrToUrl($arr) . '&key=' . Html::getKey();
         return strtoupper(md5($str));
     }
 
@@ -79,7 +81,7 @@ class  Base
     {
         if ($xml == '') return '';
         libxml_disable_entity_loader(true);
-        $arr = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+        $arr = json_decode(json_encode(simplexml_load_string($xml,'SimpleXMLElement', LIBXML_NOCDATA)), true);
         return $arr;
     }
 
@@ -100,9 +102,9 @@ class  Base
         $params[CURLOPT_SSL_VERIFYPEER] = false;
         $params[CURLOPT_SSL_VERIFYHOST] = false;
         $params[CURLOPT_SSLCERTTYPE] = 'PEM';
-        $params[CURLOPT_SSLCERT]     = __DIR__.'/../certificate/apiclient_cert.pem';
+        $params[CURLOPT_SSLCERT]     = Html::getCertPath();
         $params[CURLOPT_SSLKEYTYPE]  = 'PEM';
-        $params[CURLOPT_SSLKEY]      = __DIR__.'/../certificate/apiclient_key.pem';
+        $params[CURLOPT_SSLKEY]      = Html::getKeyPath();
         curl_setopt_array($ch,$params);
         $content = curl_exec($ch);
         curl_close($ch);

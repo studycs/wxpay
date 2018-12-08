@@ -1,5 +1,6 @@
 <?php
 namespace studycs\wxpay\config;
+use studycs\wxpay\helper\Html;
 
 class WxPayConfig extends \studycs\wxpay\sdk\WxPayConfig
 {
@@ -9,7 +10,7 @@ class WxPayConfig extends \studycs\wxpay\sdk\WxPayConfig
      */
     public function GetAppId()
     {
-        return 'wx3fcdce24657ca31e';
+        return Html::getAppId();
     }
 
     /**
@@ -17,7 +18,7 @@ class WxPayConfig extends \studycs\wxpay\sdk\WxPayConfig
      */
     public function GetMerchantId()
     {
-        return '1263709801';
+        return Html::getMchId();
     }
 
     /**
@@ -60,7 +61,7 @@ class WxPayConfig extends \studycs\wxpay\sdk\WxPayConfig
      */
     public function GetKey()
     {
-        return '10imZ9BQ7ofmgkeQ2lKPPwymNSZ0HUaw';
+        return Html::getKey();
     }
 
     /**
@@ -68,7 +69,7 @@ class WxPayConfig extends \studycs\wxpay\sdk\WxPayConfig
      */
     public function GetAppSecret()
     {
-        return '3bdafdf3ae1a020c632c0c9ec23d4fca';
+        return Html::getAppSecret();
     }
 
     /**
@@ -78,7 +79,7 @@ class WxPayConfig extends \studycs\wxpay\sdk\WxPayConfig
      */
     public function GetSSLCertPath(&$sslCertPath, &$sslKeyPath)
     {
-        $sslCertPath = '../cert/apiclient_cert.pem';
-        $sslKeyPath = '../cert/apiclient_key.pem';
+        $sslCertPath = Html::getCertPath(); // '../cert/apiclient_cert.pem';
+        $sslKeyPath  = Html::getKeyPath();  // '../cert/apiclient_key.pem';
     }
 }

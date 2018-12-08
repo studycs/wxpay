@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/12/8
- * Time: 18:08
- */
-
 namespace studycs\wxpay\helper;
 
 
@@ -33,6 +26,76 @@ class Html extends \yii\helpers\Html
             $n -= pow(26,$i);
         }
         return $r;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getKey(){
+        return \yii::$app->params['wxpay']['key'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getCertPath(){
+        return \yii::$app->params['wxpay']['sslCert'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getKeyPath(){
+        return \yii::$app->params['wxpay']['sslKey'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getMchId(){
+        return \yii::$app->params['wxpay']['mchId'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getAppId(){
+        return \yii::$app->params['wxpay']['appId'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getPayUrl(){
+        return \yii::$app->params['wxpay']['payUrl'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getBankPay(){
+        return \yii::$app->params['wxpay']['bankPay'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getPkUrl(){
+        return \yii::$app->params['wxpay']['pkUrl'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getSePayUrl(){
+        return \yii::$app->params['wxpay']['sePayUrl'];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getAppSecret(){
+        return \yii::$app->params['wxpay']['appSecret'];
     }
 
 

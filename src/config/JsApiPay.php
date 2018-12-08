@@ -168,9 +168,9 @@ class JsApiPay
     private function __CreateOauthUrlForOpenid($code)
     {
         $config = new WxPayConfig();
-        $urlObj["appid"] = $config->GetAppId();
+        $urlObj["appid"]  = $config->GetAppId();
         $urlObj["secret"] = $config->GetAppSecret();
-        $urlObj["code"] = $code;
+        $urlObj["code"]   = $code;
         $urlObj["grant_type"] = "authorization_code";
         $bizString = $this->ToUrlParams($urlObj);
         return "https://api.weixin.qq.com/sns/oauth2/access_token?".$bizString;

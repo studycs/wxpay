@@ -20,8 +20,8 @@ class WxComPay extends Base
      * @return mixed|string
      */
     public function getPuyKey(){
-        $this->params = ['mch_id'=> self::MCHID,'nonce_str'=>md5(time()),'sign_type'=>'MD5'];
-        return $this->send(self::PKURL);
+        $this->params = ['mch_id'=>Html::getMchId(),'nonce_str'=>md5(time()),'sign_type'=>'MD5'];
+        return $this->send(Html::getPkUrl());
     }
 
     /**
@@ -30,8 +30,8 @@ class WxComPay extends Base
      */
     public function comPay($data){
         $this->params = [
-            'mch_appid'       =>self::APPID,
-            'mchid'           =>self::MCHID,
+            'mch_appid'       =>Html::getAppId(),
+            'mchid'           =>Html::getMchId(),
             'nonce_str'       =>md5(time()),
             'partner_trade_no'=>Html::getOrder(),
             'openid'          =>$data['openid'],
@@ -40,7 +40,7 @@ class WxComPay extends Base
             'desc'            =>'下级代理返现提现到零钱！',
             'spbill_create_ip'=>$_SERVER['SERVER_ADDR'],
         ];
-        return $this->send(self::PAYURL);
+        return $this->send(Html::getPayUrl());
     }
 
     /**
@@ -49,7 +49,7 @@ class WxComPay extends Base
      */
     public function bankPay($data){
         $this->params = [
-            'mch_id'          => self::MCHID,
+            'mch_id'          => Html::getMchId(),
             'partner_trade_no'=> date('YmdHis'),//商户付款单号
             'nonce_str'       => md5(time()), //随机串
             'enc_bank_no'     => $data['enc_bank_no'],//收款方银行卡号RSA加密
@@ -57,7 +57,7 @@ class WxComPay extends Base
             'bank_code'       => $data['bank_code'],//收款方开户行
             'amount'          => $data['amount'],//付款金额
         ];
-        return $this->send(self::BANKPAY);
+        return $this->send(Html::getBankPay());
     }
 
     /**
@@ -68,10 +68,10 @@ class WxComPay extends Base
         $this->params = [
             'nonce_str'  => md5(time()),//随机串
             'partner_trade_no'  => $oid, //商户订单号
-            'mch_id'  => self::MCHID,//商户号
-            'appid'  => self::APPID //APPID
+            'mch_id'  => Html::getMchId(),//商户号
+            'appid'   => Html::getAppId() //APPID
         ];
-        return $this->send(self::SEPAYURL);
+        return $this->send(Html::getSePayUrl());
     }
 
     /**
