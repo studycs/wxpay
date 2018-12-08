@@ -1,0 +1,12 @@
+{
+    "name": "studycs/wxpay",
+    "description": "yii2微信支付",
+    "type": "library",
+    "authors": [
+        {
+            "name": "studycs",
+            "email": "studycs@qq.com"
+        }
+    ],
+    "require": {}
+}
