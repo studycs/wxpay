@@ -1,20 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/11/14
- * Time: 16:40
- */
+
 
 namespace studycs\wxpay\sdk;
 
 
-/**
- *
- * 短链转换输入对象
- * @author widyhu
- *
- */
 class WxPayShortUrl extends WxPayDataBase
 {
     /**
@@ -26,7 +15,7 @@ class WxPayShortUrl extends WxPayDataBase
         $this->values['appid'] = $value;
     }
     /**
-     * 获取微信分配的公众账号ID的mixed
+     * 获取微信分配的公众账号ID的值
      * @return mixed
      **/
     public function GetAppid()
@@ -35,7 +24,7 @@ class WxPayShortUrl extends WxPayDataBase
     }
     /**
      * 判断微信分配的公众账号ID是否存在
-     * @return true 或 false
+     *@return bool
      **/
     public function IsAppidSet()
     {
@@ -52,7 +41,7 @@ class WxPayShortUrl extends WxPayDataBase
         $this->values['mch_id'] = $value;
     }
     /**
-     * 获取微信支付分配的商户号的mixed
+     * 获取微信支付分配的商户号的值
      * @return mixed
      **/
     public function GetMch_id()
@@ -61,7 +50,7 @@ class WxPayShortUrl extends WxPayDataBase
     }
     /**
      * 判断微信支付分配的商户号是否存在
-     * @return true 或 false
+     *@return bool
      **/
     public function IsMch_idSet()
     {
@@ -78,7 +67,7 @@ class WxPayShortUrl extends WxPayDataBase
         $this->values['long_url'] = $value;
     }
     /**
-     * 获取需要转换的URL，签名用原串，传输需URL encode的mixed
+     * 获取需要转换的URL，签名用原串，传输需URL encode的值
      * @return mixed
      **/
     public function GetLong_url()
@@ -87,7 +76,7 @@ class WxPayShortUrl extends WxPayDataBase
     }
     /**
      * 判断需要转换的URL，签名用原串，传输需URL encode是否存在
-     * @return true 或 false
+     *@return bool
      **/
     public function IsLong_urlSet()
     {
@@ -104,7 +93,7 @@ class WxPayShortUrl extends WxPayDataBase
         $this->values['nonce_str'] = $value;
     }
     /**
-     * 获取随机字符串，不长于32位。推荐随机数生成算法的mixed
+     * 获取随机字符串，不长于32位。推荐随机数生成算法的值
      * @return mixed
      **/
     public function GetNonce_str()
@@ -113,10 +102,11 @@ class WxPayShortUrl extends WxPayDataBase
     }
     /**
      * 判断随机字符串，不长于32位。推荐随机数生成算法是否存在
-     * @return true 或 false
+     *@return bool
      **/
     public function IsNonce_strSet()
     {
         return array_key_exists('nonce_str', $this->values);
     }
+
 }

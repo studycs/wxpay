@@ -1,19 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/11/14
- * Time: 16:37
- */
+
 
 namespace studycs\wxpay\sdk;
 
-
 /**
- *
  * 退款查询输入对象
- * @author widyhu
- *
+ * Class WxPayRefundQuery
+ * @package studycs\wxpay\sdk
  */
 class WxPayRefundQuery extends WxPayDataBase
 {
@@ -26,7 +19,7 @@ class WxPayRefundQuery extends WxPayDataBase
         $this->values['appid'] = $value;
     }
     /**
-     * 获取微信分配的公众账号ID的mixed
+     * 获取微信分配的公众账号ID的值
      * @return mixed
      **/
     public function GetAppid()
@@ -35,7 +28,7 @@ class WxPayRefundQuery extends WxPayDataBase
     }
     /**
      * 判断微信分配的公众账号ID是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsAppidSet()
     {
@@ -52,7 +45,7 @@ class WxPayRefundQuery extends WxPayDataBase
         $this->values['mch_id'] = $value;
     }
     /**
-     * 获取微信支付分配的商户号的mixed
+     * 获取微信支付分配的商户号的值
      * @return mixed
      **/
     public function GetMch_id()
@@ -61,7 +54,7 @@ class WxPayRefundQuery extends WxPayDataBase
     }
     /**
      * 判断微信支付分配的商户号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsMch_idSet()
     {
@@ -78,7 +71,7 @@ class WxPayRefundQuery extends WxPayDataBase
         $this->values['device_info'] = $value;
     }
     /**
-     * 获取微信支付分配的终端设备号的mixed
+     * 获取微信支付分配的终端设备号的值
      * @return mixed
      **/
     public function GetDevice_info()
@@ -87,7 +80,7 @@ class WxPayRefundQuery extends WxPayDataBase
     }
     /**
      * 判断微信支付分配的终端设备号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsDevice_infoSet()
     {
@@ -104,7 +97,7 @@ class WxPayRefundQuery extends WxPayDataBase
         $this->values['nonce_str'] = $value;
     }
     /**
-     * 获取随机字符串，不长于32位。推荐随机数生成算法的mixed
+     * 获取随机字符串，不长于32位。推荐随机数生成算法的值
      * @return mixed
      **/
     public function GetNonce_str()
@@ -113,7 +106,7 @@ class WxPayRefundQuery extends WxPayDataBase
     }
     /**
      * 判断随机字符串，不长于32位。推荐随机数生成算法是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsNonce_strSet()
     {
@@ -129,7 +122,7 @@ class WxPayRefundQuery extends WxPayDataBase
         $this->values['transaction_id'] = $value;
     }
     /**
-     * 获取微信订单号的mixed
+     * 获取微信订单号的值
      * @return mixed
      **/
     public function GetTransaction_id()
@@ -138,7 +131,7 @@ class WxPayRefundQuery extends WxPayDataBase
     }
     /**
      * 判断微信订单号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTransaction_idSet()
     {
@@ -155,7 +148,7 @@ class WxPayRefundQuery extends WxPayDataBase
         $this->values['out_trade_no'] = $value;
     }
     /**
-     * 获取商户系统内部的订单号的mixed
+     * 获取商户系统内部的订单号的值
      * @return mixed
      **/
     public function GetOut_trade_no()
@@ -164,7 +157,7 @@ class WxPayRefundQuery extends WxPayDataBase
     }
     /**
      * 判断商户系统内部的订单号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsOut_trade_noSet()
     {
@@ -181,7 +174,7 @@ class WxPayRefundQuery extends WxPayDataBase
         $this->values['out_refund_no'] = $value;
     }
     /**
-     * 获取商户退款单号的mixed
+     * 获取商户退款单号的值
      * @return mixed
      **/
     public function GetOut_refund_no()
@@ -190,34 +183,37 @@ class WxPayRefundQuery extends WxPayDataBase
     }
     /**
      * 判断商户退款单号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsOut_refund_noSet()
     {
         return array_key_exists('out_refund_no', $this->values);
     }
 
+
     /**
-     * @param $value
-     */
+     * 设置微信退款单号refund_id、out_refund_no、out_trade_no、transaction_id四个参数必填一个，如果同时存在优先级为：refund_id>out_refund_no>transaction_id>out_trade_no
+     * @param string $value
+     **/
     public function SetRefund_id($value)
     {
         $this->values['refund_id'] = $value;
     }
-
     /**
+     * 获取微信退款单号refund_id、out_refund_no、out_trade_no、transaction_id四个参数必填一个，如果同时存在优先级为：refund_id>out_refund_no>transaction_id>out_trade_no的值
      * @return mixed
-     */
+     **/
     public function GetRefund_id()
     {
         return $this->values['refund_id'];
     }
-
     /**
+     * 判断微信退款单号refund_id、out_refund_no、out_trade_no、transaction_id四个参数必填一个，如果同时存在优先级为：refund_id>out_refund_no>transaction_id>out_trade_no是否存在
      * @return bool
-     */
+     **/
     public function IsRefund_idSet()
     {
         return array_key_exists('refund_id', $this->values);
     }
+
 }

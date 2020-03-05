@@ -1,26 +1,16 @@
 {
     "name": "studycs/wxpay",
-    "description": "yii2微信支付",
     "type": "library",
     "authors": [
         {
-            "name": "studycs",
-            "email": "studycs@qq.com"
+            "name": "luoxiaokang",
+            "email": "506848816@qq.com"
         }
     ],
     "require": {
-        "php": ">=7.1.3",
-        "lib-pcre": "*",
-        "ext-curl": "*",
-        "ext-json": "*",
-        "ext-openssl": "*",
-        "ext-libxml": "*",
-        "ext-simplexml": "*",
-        "yiisoft/yii2": "~2.0.14"
-    },
-    "autoload": {
-        "psr-4": {
-            "studycs\\wxpay\\": "src/"
-        }
+      "ext-libxml": "*",
+      "ext-json": "*",
+      "ext-simplexml": "*",
+      "ext-curl": "*"
     }
 }

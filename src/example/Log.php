@@ -1,39 +1,22 @@
 <?php
+namespace studycs\wxpay\example;
 /**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/11/14
- * Time: 17:16
+ * Class Log
+ * @package studycs\wxpay\example
  */
-
-namespace studycs\wxpay\sdk;
-
-
 class Log
 {
-    /**
-     * @var CLogFileHandler $handler
-     */
+    /** @var CLogFileHandler $handler */
     private $handler = null;
-    /**
-     * @var int $level
-     */
+    /** @var int $level */
     private $level = 15;
-
-    /**
-     * @var Log $instance
-     */
-    private static $instance = null;
+    /** @var Log $instance */
+    private static $instance ;
 
     private function __construct(){}
 
     private function __clone(){}
 
-    /**
-     * @param null $handler
-     * @param int $level
-     * @return Log
-     */
     public static function Init($handler = null,$level = 15)
     {
         if(!self::$instance instanceof self)
@@ -45,9 +28,7 @@ class Log
         return self::$instance;
     }
 
-    /**
-     * @param $handler
-     */
+
     private function __setHandle($handler){
         $this->handler = $handler;
     }
@@ -107,7 +88,7 @@ class Log
     }
 
     /**
-     * @param $level
+     * @param int $level
      * @return string
      */
     private function getLevelStr($level)
@@ -127,13 +108,14 @@ class Log
                 return 'error';
                 break;
             default:
+                return '';
+
         }
-        return null;
     }
 
     /**
-     * @param $level
-     * @param $msg
+     * @param int $level
+     * @param string $msg
      */
     protected function write($level,$msg)
     {

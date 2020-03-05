@@ -1,13 +1,14 @@
 <?php
+
+
 namespace studycs\wxpay\sdk;
-/**
- * Class WxPayNotifyReply
- * @package app\paySdk
- */
+
+
 class WxPayNotifyReply extends  WxPayDataBaseSignMd5
 {
     /**
-     * @param $return_code
+     * 设置错误码 FAIL 或者 SUCCESS
+     * @param string
      */
     public function SetReturn_code($return_code)
     {
@@ -15,7 +16,8 @@ class WxPayNotifyReply extends  WxPayDataBaseSignMd5
     }
 
     /**
-     * @return mixed
+     * 获取错误码 FAIL 或者 SUCCESS
+     * @return string $return_code
      */
     public function GetReturn_code()
     {
@@ -23,7 +25,8 @@ class WxPayNotifyReply extends  WxPayDataBaseSignMd5
     }
 
     /**
-     * @param $return_msg
+     * 设置错误信息
+     * @param string $return_msg
      */
     public function SetReturn_msg($return_msg)
     {
@@ -31,7 +34,8 @@ class WxPayNotifyReply extends  WxPayDataBaseSignMd5
     }
 
     /**
-     * @return mixed
+     * 获取错误信息
+     * @return string
      */
     public function GetReturn_msg()
     {
@@ -39,8 +43,9 @@ class WxPayNotifyReply extends  WxPayDataBaseSignMd5
     }
 
     /**
-     * @param $key
-     * @param $value
+     * 设置返回参数
+     * @param string $key
+     * @param string $value
      */
     public function SetData($key, $value)
     {

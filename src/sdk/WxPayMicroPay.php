@@ -1,18 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/11/14
- * Time: 16:42
- */
+
 
 namespace studycs\wxpay\sdk;
-/**
- *
- * 提交被扫输入对象
- * @author widyhu
- *
- */
+
+
 class WxPayMicroPay extends WxPayDataBase
 {
     /**
@@ -24,7 +15,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['appid'] = $value;
     }
     /**
-     * 获取微信分配的公众账号ID的mixed
+     * 获取微信分配的公众账号ID的值
      * @return mixed
      **/
     public function GetAppid()
@@ -33,7 +24,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断微信分配的公众账号ID是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsAppidSet()
     {
@@ -50,7 +41,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['mch_id'] = $value;
     }
     /**
-     * 获取微信支付分配的商户号的mixed
+     * 获取微信支付分配的商户号的值
      * @return mixed
      **/
     public function GetMch_id()
@@ -59,7 +50,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断微信支付分配的商户号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsMch_idSet()
     {
@@ -76,7 +67,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['device_info'] = $value;
     }
     /**
-     * 获取终端设备号(商户自定义，如门店编号)的mixed
+     * 获取终端设备号(商户自定义，如门店编号)的值
      * @return mixed
      **/
     public function GetDevice_info()
@@ -85,7 +76,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断终端设备号(商户自定义，如门店编号)是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsDevice_infoSet()
     {
@@ -102,7 +93,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['nonce_str'] = $value;
     }
     /**
-     * 获取随机字符串，不长于32位。推荐随机数生成算法的mixed
+     * 获取随机字符串，不长于32位。推荐随机数生成算法的值
      * @return mixed
      **/
     public function GetNonce_str()
@@ -111,7 +102,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断随机字符串，不长于32位。推荐随机数生成算法是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsNonce_strSet()
     {
@@ -127,7 +118,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['body'] = $value;
     }
     /**
-     * 获取商品或支付单简要描述的mixed
+     * 获取商品或支付单简要描述的值
      * @return mixed
      **/
     public function GetBody()
@@ -136,7 +127,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断商品或支付单简要描述是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsBodySet()
     {
@@ -153,7 +144,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['detail'] = $value;
     }
     /**
-     * 获取商品名称明细列表的mixed
+     * 获取商品名称明细列表的值
      * @return mixed
      **/
     public function GetDetail()
@@ -162,7 +153,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断商品名称明细列表是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsDetailSet()
     {
@@ -179,7 +170,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['attach'] = $value;
     }
     /**
-     * 获取附加数据，在查询API和支付通知中原样返回，该字段主要用于商户携带订单的自定义数据的mixed
+     * 获取附加数据，在查询API和支付通知中原样返回，该字段主要用于商户携带订单的自定义数据的值
      * @return mixed
      **/
     public function GetAttach()
@@ -188,7 +179,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断附加数据，在查询API和支付通知中原样返回，该字段主要用于商户携带订单的自定义数据是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsAttachSet()
     {
@@ -205,7 +196,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['out_trade_no'] = $value;
     }
     /**
-     * 获取商户系统内部的订单号,32个字符内、可包含字母, 其他说明见商户订单号的mixed
+     * 获取商户系统内部的订单号,32个字符内、可包含字母, 其他说明见商户订单号的值
      * @return mixed
      **/
     public function GetOut_trade_no()
@@ -214,7 +205,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断商户系统内部的订单号,32个字符内、可包含字母, 其他说明见商户订单号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsOut_trade_noSet()
     {
@@ -231,7 +222,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['total_fee'] = $value;
     }
     /**
-     * 获取订单总金额，单位为分，只能为整数，详见支付金额的mixed
+     * 获取订单总金额，单位为分，只能为整数，详见支付金额的值
      * @return mixed
      **/
     public function GetTotal_fee()
@@ -240,7 +231,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断订单总金额，单位为分，只能为整数，详见支付金额是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTotal_feeSet()
     {
@@ -249,7 +240,7 @@ class WxPayMicroPay extends WxPayDataBase
 
 
     /**
-     * 设置符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他mixed列表详见货币类型
+     * 设置符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他值列表详见货币类型
      * @param string $value
      **/
     public function SetFee_type($value)
@@ -257,7 +248,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['fee_type'] = $value;
     }
     /**
-     * 获取符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他mixed列表详见货币类型的mixed
+     * 获取符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他值列表详见货币类型的值
      * @return mixed
      **/
     public function GetFee_type()
@@ -265,8 +256,8 @@ class WxPayMicroPay extends WxPayDataBase
         return $this->values['fee_type'];
     }
     /**
-     * 判断符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他mixed列表详见货币类型是否存在
-     * @return true 或 false
+     * 判断符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他值列表详见货币类型是否存在
+     * @return bool
      **/
     public function IsFee_typeSet()
     {
@@ -283,7 +274,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['spbill_create_ip'] = $value;
     }
     /**
-     * 获取调用微信支付API的机器IP 的mixed
+     * 获取调用微信支付API的机器IP 的值
      * @return mixed
      **/
     public function GetSpbill_create_ip()
@@ -292,7 +283,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断调用微信支付API的机器IP 是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsSpbill_create_ipSet()
     {
@@ -308,7 +299,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['time_start'] = $value;
     }
     /**
-     * 获取订单生成时间，格式为yyyyMMddHHmmss，如2009年12月25日9点10分10秒表示为20091225091010。详见时间规则的mixed
+     * 获取订单生成时间，格式为yyyyMMddHHmmss，如2009年12月25日9点10分10秒表示为20091225091010。详见时间规则的值
      * @return mixed
      **/
     public function GetTime_start()
@@ -317,7 +308,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断订单生成时间，格式为yyyyMMddHHmmss，如2009年12月25日9点10分10秒表示为20091225091010。详见时间规则是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTime_startSet()
     {
@@ -334,7 +325,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['time_expire'] = $value;
     }
     /**
-     * 获取订单失效时间，格式为yyyyMMddHHmmss，如2009年12月27日9点10分10秒表示为20091227091010。详见时间规则的mixed
+     * 获取订单失效时间，格式为yyyyMMddHHmmss，如2009年12月27日9点10分10秒表示为20091227091010。详见时间规则的值
      * @return mixed
      **/
     public function GetTime_expire()
@@ -343,7 +334,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断订单失效时间，格式为yyyyMMddHHmmss，如2009年12月27日9点10分10秒表示为20091227091010。详见时间规则是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTime_expireSet()
     {
@@ -360,7 +351,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['goods_tag'] = $value;
     }
     /**
-     * 获取商品标记，代金券或立减优惠功能的参数，说明详见代金券或立减优惠的mixed
+     * 获取商品标记，代金券或立减优惠功能的参数，说明详见代金券或立减优惠的值
      * @return mixed
      **/
     public function GetGoods_tag()
@@ -369,7 +360,7 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断商品标记，代金券或立减优惠功能的参数，说明详见代金券或立减优惠是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsGoods_tagSet()
     {
@@ -386,7 +377,7 @@ class WxPayMicroPay extends WxPayDataBase
         $this->values['auth_code'] = $value;
     }
     /**
-     * 获取扫码支付授权码，设备读取用户微信中的条码或者二维码信息的mixed
+     * 获取扫码支付授权码，设备读取用户微信中的条码或者二维码信息的值
      * @return mixed
      **/
     public function GetAuth_code()
@@ -395,10 +386,11 @@ class WxPayMicroPay extends WxPayDataBase
     }
     /**
      * 判断扫码支付授权码，设备读取用户微信中的条码或者二维码信息是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsAuth_codeSet()
     {
         return array_key_exists('auth_code', $this->values);
     }
+
 }

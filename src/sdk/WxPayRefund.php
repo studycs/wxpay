@@ -1,10 +1,9 @@
 <?php
+
+
 namespace studycs\wxpay\sdk;
 
-/**
- * Class WxPayRefund
- * @package app\paySdk
- */
+
 class WxPayRefund extends WxPayDataBase
 {
     /**
@@ -16,7 +15,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['appid'] = $value;
     }
     /**
-     * 获取微信分配的公众账号ID的mixed
+     * 获取微信分配的公众账号ID的值
      * @return mixed
      **/
     public function GetAppid()
@@ -25,7 +24,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断微信分配的公众账号ID是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsAppidSet()
     {
@@ -42,7 +41,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['mch_id'] = $value;
     }
     /**
-     * 获取微信支付分配的商户号的mixed
+     * 获取微信支付分配的商户号的值
      * @return mixed
      **/
     public function GetMch_id()
@@ -51,7 +50,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断微信支付分配的商户号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsMch_idSet()
     {
@@ -68,7 +67,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['device_info'] = $value;
     }
     /**
-     * 获取微信支付分配的终端设备号，与下单一致的mixed
+     * 获取微信支付分配的终端设备号，与下单一致的值
      * @return mixed
      **/
     public function GetDevice_info()
@@ -77,7 +76,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断微信支付分配的终端设备号，与下单一致是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsDevice_infoSet()
     {
@@ -94,7 +93,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['nonce_str'] = $value;
     }
     /**
-     * 获取随机字符串，不长于32位。推荐随机数生成算法的mixed
+     * 获取随机字符串，不长于32位。推荐随机数生成算法的值
      * @return mixed
      **/
     public function GetNonce_str()
@@ -103,7 +102,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断随机字符串，不长于32位。推荐随机数生成算法是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsNonce_strSet()
     {
@@ -119,7 +118,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['transaction_id'] = $value;
     }
     /**
-     * 获取微信订单号的mixed
+     * 获取微信订单号的值
      * @return mixed
      **/
     public function GetTransaction_id()
@@ -128,7 +127,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断微信订单号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTransaction_idSet()
     {
@@ -145,7 +144,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['out_trade_no'] = $value;
     }
     /**
-     * 获取商户系统内部的订单号,transaction_id、out_trade_no二选一，如果同时存在优先级：transaction_id> out_trade_no的mixed
+     * 获取商户系统内部的订单号,transaction_id、out_trade_no二选一，如果同时存在优先级：transaction_id> out_trade_no的值
      * @return mixed
      **/
     public function GetOut_trade_no()
@@ -154,7 +153,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断商户系统内部的订单号,transaction_id、out_trade_no二选一，如果同时存在优先级：transaction_id> out_trade_no是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsOut_trade_noSet()
     {
@@ -171,7 +170,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['out_refund_no'] = $value;
     }
     /**
-     * 获取商户系统内部的退款单号，商户系统内部唯一，同一退款单号多次请求只退一笔的mixed
+     * 获取商户系统内部的退款单号，商户系统内部唯一，同一退款单号多次请求只退一笔的值
      * @return mixed
      **/
     public function GetOut_refund_no()
@@ -180,7 +179,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断商户系统内部的退款单号，商户系统内部唯一，同一退款单号多次请求只退一笔是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsOut_refund_noSet()
     {
@@ -197,7 +196,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['total_fee'] = $value;
     }
     /**
-     * 获取订单总金额，单位为分，只能为整数，详见支付金额的mixed
+     * 获取订单总金额，单位为分，只能为整数，详见支付金额的值
      * @return mixed
      **/
     public function GetTotal_fee()
@@ -206,7 +205,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断订单总金额，单位为分，只能为整数，详见支付金额是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTotal_feeSet()
     {
@@ -223,7 +222,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['refund_fee'] = $value;
     }
     /**
-     * 获取退款总金额，订单总金额，单位为分，只能为整数，详见支付金额的mixed
+     * 获取退款总金额，订单总金额，单位为分，只能为整数，详见支付金额的值
      * @return mixed
      **/
     public function GetRefund_fee()
@@ -232,7 +231,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断退款总金额，订单总金额，单位为分，只能为整数，详见支付金额是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsRefund_feeSet()
     {
@@ -241,7 +240,7 @@ class WxPayRefund extends WxPayDataBase
 
 
     /**
-     * 设置货币类型，符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他mixed列表详见货币类型
+     * 设置货币类型，符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他值列表详见货币类型
      * @param string $value
      **/
     public function SetRefund_fee_type($value)
@@ -249,7 +248,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['refund_fee_type'] = $value;
     }
     /**
-     * 获取货币类型，符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他mixed列表详见货币类型的mixed
+     * 获取货币类型，符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他值列表详见货币类型的值
      * @return mixed
      **/
     public function GetRefund_fee_type()
@@ -257,8 +256,8 @@ class WxPayRefund extends WxPayDataBase
         return $this->values['refund_fee_type'];
     }
     /**
-     * 判断货币类型，符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他mixed列表详见货币类型是否存在
-     * @return true 或 false
+     * 判断货币类型，符合ISO 4217标准的三位字母代码，默认人民币：CNY，其他值列表详见货币类型是否存在
+     * @return bool
      **/
     public function IsRefund_fee_typeSet()
     {
@@ -275,7 +274,7 @@ class WxPayRefund extends WxPayDataBase
         $this->values['op_user_id'] = $value;
     }
     /**
-     * 获取操作员帐号, 默认为商户号的mixed
+     * 获取操作员帐号, 默认为商户号的值
      * @return mixed
      **/
     public function GetOp_user_id()
@@ -284,7 +283,7 @@ class WxPayRefund extends WxPayDataBase
     }
     /**
      * 判断操作员帐号, 默认为商户号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsOp_user_idSet()
     {

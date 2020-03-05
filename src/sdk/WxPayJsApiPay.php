@@ -1,19 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/11/14
- * Time: 16:45
- */
-
 namespace studycs\wxpay\sdk;
 
-
 /**
- *
- * 提交JSAPI输入对象
- * @author widyhu
- *
+ * Class WxPayJsApiPay
+ * @package studycs\wxpay\sdk
  */
 class WxPayJsApiPay extends WxPayDataBase
 {
@@ -26,7 +16,7 @@ class WxPayJsApiPay extends WxPayDataBase
         $this->values['appId'] = $value;
     }
     /**
-     * 获取微信分配的公众账号ID的mixed
+     * 获取微信分配的公众账号ID的值
      * @return mixed
      **/
     public function GetAppid()
@@ -35,7 +25,7 @@ class WxPayJsApiPay extends WxPayDataBase
     }
     /**
      * 判断微信分配的公众账号ID是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsAppidSet()
     {
@@ -52,7 +42,7 @@ class WxPayJsApiPay extends WxPayDataBase
         $this->values['timeStamp'] = $value;
     }
     /**
-     * 获取支付时间戳的mixed
+     * 获取支付时间戳的值
      * @return mixed
      **/
     public function GetTimeStamp()
@@ -61,7 +51,7 @@ class WxPayJsApiPay extends WxPayDataBase
     }
     /**
      * 判断支付时间戳是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTimeStampSet()
     {
@@ -77,7 +67,7 @@ class WxPayJsApiPay extends WxPayDataBase
         $this->values['nonceStr'] = $value;
     }
     /**
-     * 获取notify随机字符串mixed
+     * 获取notify随机字符串值
      * @return mixed
      **/
     public function GetReturn_code()
@@ -86,7 +76,7 @@ class WxPayJsApiPay extends WxPayDataBase
     }
     /**
      * 判断随机字符串是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsReturn_codeSet()
     {
@@ -103,7 +93,7 @@ class WxPayJsApiPay extends WxPayDataBase
         $this->values['package'] = $value;
     }
     /**
-     * 获取订单详情扩展字符串的mixed
+     * 获取订单详情扩展字符串的值
      * @return mixed
      **/
     public function GetPackage()
@@ -112,7 +102,7 @@ class WxPayJsApiPay extends WxPayDataBase
     }
     /**
      * 判断订单详情扩展字符串是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsPackageSet()
     {
@@ -137,7 +127,7 @@ class WxPayJsApiPay extends WxPayDataBase
     }
     /**
      * 判断签名方式是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsSignTypeSet()
     {
@@ -162,10 +152,11 @@ class WxPayJsApiPay extends WxPayDataBase
     }
     /**
      * 判断签名方式是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsPaySignSet()
     {
         return array_key_exists('paySign', $this->values);
     }
+
 }

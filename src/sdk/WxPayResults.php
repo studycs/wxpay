@@ -1,32 +1,41 @@
 <?php
+
+
 namespace studycs\wxpay\sdk;
+
 /**
+ * 接口调用结果类
  * Class WxPayResults
- * @package app\paySdk
+ * @package studycs\wxpay\sdk
  */
 class WxPayResults extends WxPayDataBase
 {
     /**
-     * @param $config
+     * @param WxPayConfigInterface $config
      * @param bool $needSignType
      * @return string
      */
     public function MakeSign($config, $needSignType = false)
     {
+        //签名步骤一：按字典序排序参数
         ksort($this->values);
         $string = $this->ToUrlParams();
+        //签名步骤二：在string后加入KEY
         $string = $string . "&key=".$config->GetKey();
+        //签名步骤三：MD5加密或者HMAC-SHA256
         if(strlen($this->GetSign()) <= 32){
+            //如果签名小于等于32个,则使用md5验证
             $string = md5($string);
         } else {
+            //是用sha256校验
             $string = hash_hmac("sha256",$string ,$config->GetKey());
         }
-        $result = strtoupper($string);
-        return $result;
+        //签名步骤四：所有字符转为大写
+        return strtoupper($string);
     }
 
     /**
-     * @param $config
+     * @param WxPayConfigInterface $config
      * @return bool
      * @throws WxPayException
      */
@@ -36,13 +45,14 @@ class WxPayResults extends WxPayDataBase
             throw new WxPayException("签名错误！");
         }
         $sign = $this->MakeSign($config, false);
-        if($this->GetSign() == $sign){
+        if($this->GetSign() == $sign){//签名正确
             return true;
         }
         throw new WxPayException("签名错误！");
     }
 
     /**
+     * 使用数组初始化
      * @param $array
      */
     public function FromArray($array)
@@ -51,7 +61,8 @@ class WxPayResults extends WxPayDataBase
     }
 
     /**
-     * @param $config
+     * 使用数组初始化对象
+     * @param WxPayConfigInterface $config
      * @param $array
      * @param bool $noCheckSign
      * @return WxPayResults
@@ -68,7 +79,6 @@ class WxPayResults extends WxPayDataBase
     }
 
     /**
-     *
      * 设置参数
      * @param string $key
      * @param string $value
@@ -79,6 +89,7 @@ class WxPayResults extends WxPayDataBase
     }
 
     /**
+     * 将xml转为array
      * @param $config
      * @param $xml
      * @return array|bool
@@ -88,8 +99,10 @@ class WxPayResults extends WxPayDataBase
     {
         $obj = new self();
         $obj->FromXml($xml);
+        //失败则直接返回失败
         if($obj->values['return_code'] != 'SUCCESS') {
             foreach ($obj->values as $key => $value) {
+                #除了return_code和return_msg之外其他的参数存在，则报错
                 if($key != "return_code" && $key != "return_msg"){
                     throw new WxPayException("输入数据存在异常！");
                 }

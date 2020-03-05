@@ -1,16 +1,12 @@
 <?php
+namespace studycs\wxpay\example;
 /**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/11/14
- * Time: 17:15
+ * Class CLogFileHandler
+ * @package studycs\wxpay\example
  */
-
-namespace studycs\wxpay\sdk;
-
-
-class CLogFileHandler implements ILogHandler
+class CLogFileHandler
 {
+    /** @var resource $handle  */
     private $handle = null;
 
     public function __construct($file = '')

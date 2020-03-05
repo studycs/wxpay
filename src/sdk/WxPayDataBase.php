@@ -1,45 +1,50 @@
 <?php
 namespace studycs\wxpay\sdk;
 
+/**
+ * Class WxPayDataBase
+ * @package studycs\wxpay\sdk
+ * 数据对象基础类，该类中定义数据类最基本的行为，包括：计算/设置/获取签名、输出xml格式的参数、从xml读取数据对象等
+ */
 class WxPayDataBase
 {
-    protected $values = array();
+    protected $values = [];
 
     /**
+     * 设置签名，详见签名生成算法类型
      * @param $sign_type
      * @return mixed
      */
-    public function SetSignType($sign_type)
-    {
+    public function SetSignType($sign_type){
         $this->values['sign_type'] = $sign_type;
         return $sign_type;
     }
 
     /**
-     * @param $config
-     * @return string
+     * 设置签名，详见签名生成算法
+     * @param WxPayConfigInterface $config
+     * @return mixed
      * @throws WxPayException
      */
-    public function SetSign($config)
-    {
+    public function SetSign($config){
         $sign = $this->MakeSign($config);
         $this->values['sign'] = $sign;
         return $sign;
     }
 
     /**
+     * 获取签名，详见签名生成算法的值
      * @return mixed
      */
-    public function GetSign()
-    {
+    public function GetSign(){
         return $this->values['sign'];
     }
 
     /**
+     * 判断签名，详见签名生成算法是否存在
      * @return bool
      */
-    public function IsSignSet()
-    {
+    public function IsSignSet(){
         return array_key_exists('sign', $this->values);
     }
 
@@ -47,13 +52,11 @@ class WxPayDataBase
      * @return string
      * @throws WxPayException
      */
-    public function ToXml()
-    {
+    public function ToXml(){
         if(!is_array($this->values) || count($this->values) <= 0)
         {
             throw new WxPayException("数组数据异常！");
         }
-
         $xml = "<xml>";
         foreach ($this->values as $key=>$val)
         {
@@ -69,11 +72,10 @@ class WxPayDataBase
 
     /**
      * @param $xml
-     * @return array|mixed
+     * @return mixed
      * @throws WxPayException
      */
-    public function FromXml($xml)
-    {
+    public function FromXml($xml){
         if(!$xml){
             throw new WxPayException("xml数据异常！");
         }
@@ -83,7 +85,7 @@ class WxPayDataBase
     }
 
     /**
-     * 格式化参数格式化成url参数
+     * @return string
      */
     public function ToUrlParams()
     {
@@ -94,13 +96,12 @@ class WxPayDataBase
                 $buff .= $k . "=" . $v . "&";
             }
         }
-
         $buff = trim($buff, "&");
         return $buff;
     }
 
     /**
-     * @param WxPayConfig $config
+     * @param WxPayConfigInterface $config
      * @param bool $needSignType
      * @return string
      * @throws WxPayException
@@ -110,9 +111,12 @@ class WxPayDataBase
         if($needSignType) {
             $this->SetSignType($config->GetSignType());
         }
+        //签名步骤一：按字典序排序参数
         ksort($this->values);
         $string = $this->ToUrlParams();
+        //签名步骤二：在string后加入KEY
         $string = $string . "&key=".$config->GetKey();
+        //签名步骤三：MD5加密或者HMAC-SHA256
         if($config->GetSignType() == "MD5"){
             $string = md5($string);
         } else if($config->GetSignType() == "HMAC-SHA256") {
@@ -120,15 +124,16 @@ class WxPayDataBase
         } else {
             throw new WxPayException("签名类型不支持！");
         }
-        $result = strtoupper($string);
-        return $result;
+        //签名步骤四：所有字符转为大写
+        return strtoupper($string);
     }
 
     /**
-     * @return array
+     * 获取设置的值
      */
     public function GetValues()
     {
         return $this->values;
     }
+
 }

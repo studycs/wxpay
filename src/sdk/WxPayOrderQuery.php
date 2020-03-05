@@ -1,16 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/11/14
- * Time: 16:33
- */
+
 
 namespace studycs\wxpay\sdk;
-/**
- * Class WxPayOrderQuery
- * @package app\paySdk
- */
+
+
 class WxPayOrderQuery extends WxPayDataBase
 {
     /**
@@ -23,7 +16,7 @@ class WxPayOrderQuery extends WxPayDataBase
     }
 
     /**
-     * 获取微信分配的公众账号ID的mixed
+     * 获取微信分配的公众账号ID的值
      * @return mixed
      **/
     public function GetAppid()
@@ -33,13 +26,12 @@ class WxPayOrderQuery extends WxPayDataBase
 
     /**
      * 判断微信分配的公众账号ID是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsAppidSet()
     {
         return array_key_exists('appid', $this->values);
     }
-
 
     /**
      * 设置微信支付分配的商户号
@@ -51,7 +43,7 @@ class WxPayOrderQuery extends WxPayDataBase
     }
 
     /**
-     * 获取微信支付分配的商户号的mixed
+     * 获取微信支付分配的商户号的值
      * @return mixed
      **/
     public function GetMch_id()
@@ -61,13 +53,12 @@ class WxPayOrderQuery extends WxPayDataBase
 
     /**
      * 判断微信支付分配的商户号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsMch_idSet()
     {
         return array_key_exists('mch_id', $this->values);
     }
-
 
     /**
      * 设置微信的订单号，优先使用
@@ -79,7 +70,7 @@ class WxPayOrderQuery extends WxPayDataBase
     }
 
     /**
-     * 获取微信的订单号，优先使用的mixed
+     * 获取微信的订单号，优先使用的值
      * @return mixed
      **/
     public function GetTransaction_id()
@@ -89,7 +80,7 @@ class WxPayOrderQuery extends WxPayDataBase
 
     /**
      * 判断微信的订单号，优先使用是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTransaction_idSet()
     {
@@ -104,8 +95,9 @@ class WxPayOrderQuery extends WxPayDataBase
     {
         $this->values['out_trade_no'] = $value;
     }
+
     /**
-     * 获取商户系统内部的订单号，当没提供transaction_id时需要传这个。的mixed
+     * 获取商户系统内部的订单号，当没提供transaction_id时需要传这个。的值
      * @return mixed
      **/
     public function GetOut_trade_no()
@@ -115,7 +107,7 @@ class WxPayOrderQuery extends WxPayDataBase
 
     /**
      * 判断商户系统内部的订单号，当没提供transaction_id时需要传这个。是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsOut_trade_noSet()
     {
@@ -132,7 +124,7 @@ class WxPayOrderQuery extends WxPayDataBase
     }
 
     /**
-     * 获取随机字符串，不长于32位。推荐随机数生成算法的mixed
+     * 获取随机字符串，不长于32位。推荐随机数生成算法的值
      * @return mixed
      **/
     public function GetNonce_str()
@@ -142,7 +134,7 @@ class WxPayOrderQuery extends WxPayDataBase
 
     /**
      * 判断随机字符串，不长于32位。推荐随机数生成算法是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsNonce_strSet()
     {

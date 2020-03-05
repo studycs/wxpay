@@ -1,20 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2018/11/14
- * Time: 16:39
- */
+
 
 namespace studycs\wxpay\sdk;
 
 
-/**
- *
- * 测速上报输入对象
- * @author widyhu
- *
- */
 class WxPayReport extends WxPayDataBase
 {
     /**
@@ -26,7 +15,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['appid'] = $value;
     }
     /**
-     * 获取微信分配的公众账号ID的mixed
+     * 获取微信分配的公众账号ID的值
      * @return mixed
      **/
     public function GetAppid()
@@ -35,7 +24,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断微信分配的公众账号ID是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsAppidSet()
     {
@@ -52,7 +41,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['mch_id'] = $value;
     }
     /**
-     * 获取微信支付分配的商户号的mixed
+     * 获取微信支付分配的商户号的值
      * @return mixed
      **/
     public function GetMch_id()
@@ -61,7 +50,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断微信支付分配的商户号是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsMch_idSet()
     {
@@ -78,7 +67,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['device_info'] = $value;
     }
     /**
-     * 获取微信支付分配的终端设备号，商户自定义的mixed
+     * 获取微信支付分配的终端设备号，商户自定义的值
      * @return mixed
      **/
     public function GetDevice_info()
@@ -87,7 +76,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断微信支付分配的终端设备号，商户自定义是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsDevice_infoSet()
     {
@@ -104,7 +93,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['nonce_str'] = $value;
     }
     /**
-     * 获取随机字符串，不长于32位。推荐随机数生成算法的mixed
+     * 获取随机字符串，不长于32位。推荐随机数生成算法的值
      * @return mixed
      **/
     public function GetNonce_str()
@@ -113,7 +102,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断随机字符串，不长于32位。推荐随机数生成算法是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsNonce_strSet()
     {
@@ -130,7 +119,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['interface_url'] = $value;
     }
     /**
-     * 获取上报对应的接口的完整URL，类似：https://api.mch.weixin.qq.com/pay/unifiedorder对于被扫支付，为更好的和商户共同分析一次业务行为的整体耗时情况，对于两种接入模式，请都在门店侧对一次被扫行为进行一次单独的整体上报，上报URL指定为：https://api.mch.weixin.qq.com/pay/micropay/total关于两种接入模式具体可参考本文档章节：被扫支付商户接入模式其它接口调用仍然按照调用一次，上报一次来进行。的mixed
+     * 获取上报对应的接口的完整URL，类似：https://api.mch.weixin.qq.com/pay/unifiedorder对于被扫支付，为更好的和商户共同分析一次业务行为的整体耗时情况，对于两种接入模式，请都在门店侧对一次被扫行为进行一次单独的整体上报，上报URL指定为：https://api.mch.weixin.qq.com/pay/micropay/total关于两种接入模式具体可参考本文档章节：被扫支付商户接入模式其它接口调用仍然按照调用一次，上报一次来进行。的值
      * @return mixed
      **/
     public function GetInterface_url()
@@ -139,7 +128,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断上报对应的接口的完整URL，类似：https://api.mch.weixin.qq.com/pay/unifiedorder对于被扫支付，为更好的和商户共同分析一次业务行为的整体耗时情况，对于两种接入模式，请都在门店侧对一次被扫行为进行一次单独的整体上报，上报URL指定为：https://api.mch.weixin.qq.com/pay/micropay/total关于两种接入模式具体可参考本文档章节：被扫支付商户接入模式其它接口调用仍然按照调用一次，上报一次来进行。是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsInterface_urlSet()
     {
@@ -156,7 +145,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['execute_time_'] = $value;
     }
     /**
-     * 获取接口耗时情况，单位为毫秒的mixed
+     * 获取接口耗时情况，单位为毫秒的值
      * @return mixed
      **/
     public function GetExecute_time_()
@@ -165,7 +154,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断接口耗时情况，单位为毫秒是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsExecute_time_Set()
     {
@@ -182,7 +171,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['return_code'] = $value;
     }
     /**
-     * 获取SUCCESS/FAIL此字段是通信标识，非交易标识，交易是否成功需要查看trade_state来判断的mixed
+     * 获取SUCCESS/FAIL此字段是通信标识，非交易标识，交易是否成功需要查看trade_state来判断的值
      * @return mixed
      **/
     public function GetReturn_code()
@@ -191,7 +180,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断SUCCESS/FAIL此字段是通信标识，非交易标识，交易是否成功需要查看trade_state来判断是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsReturn_codeSet()
     {
@@ -208,7 +197,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['return_msg'] = $value;
     }
     /**
-     * 获取返回信息，如非空，为错误原因签名失败参数格式校验错误的mixed
+     * 获取返回信息，如非空，为错误原因签名失败参数格式校验错误的值
      * @return mixed
      **/
     public function GetReturn_msg()
@@ -217,7 +206,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断返回信息，如非空，为错误原因签名失败参数格式校验错误是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsReturn_msgSet()
     {
@@ -234,7 +223,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['result_code'] = $value;
     }
     /**
-     * 获取SUCCESS/FAIL的mixed
+     * 获取SUCCESS/FAIL的值
      * @return mixed
      **/
     public function GetResult_code()
@@ -243,7 +232,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断SUCCESS/FAIL是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsResult_codeSet()
     {
@@ -260,7 +249,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['err_code'] = $value;
     }
     /**
-     * 获取ORDERNOTEXIST—订单不存在SYSTEMERROR—系统错误的mixed
+     * 获取ORDERNOTEXIST—订单不存在SYSTEMERROR—系统错误的值
      * @return mixed
      **/
     public function GetErr_code()
@@ -269,7 +258,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断ORDERNOTEXIST—订单不存在SYSTEMERROR—系统错误是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsErr_codeSet()
     {
@@ -286,7 +275,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['err_code_des'] = $value;
     }
     /**
-     * 获取结果信息描述的mixed
+     * 获取结果信息描述的值
      * @return mixed
      **/
     public function GetErr_code_des()
@@ -295,7 +284,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断结果信息描述是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsErr_code_desSet()
     {
@@ -312,7 +301,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['out_trade_no'] = $value;
     }
     /**
-     * 获取商户系统内部的订单号,商户可以在上报时提供相关商户订单号方便微信支付更好的提高服务质量。 的mixed
+     * 获取商户系统内部的订单号,商户可以在上报时提供相关商户订单号方便微信支付更好的提高服务质量。 的值
      * @return mixed
      **/
     public function GetOut_trade_no()
@@ -321,7 +310,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断商户系统内部的订单号,商户可以在上报时提供相关商户订单号方便微信支付更好的提高服务质量。 是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsOut_trade_noSet()
     {
@@ -338,7 +327,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['user_ip'] = $value;
     }
     /**
-     * 获取发起接口调用时的机器IP 的mixed
+     * 获取发起接口调用时的机器IP 的值
      * @return mixed
      **/
     public function GetUser_ip()
@@ -347,7 +336,7 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断发起接口调用时的机器IP 是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsUser_ipSet()
     {
@@ -364,7 +353,7 @@ class WxPayReport extends WxPayDataBase
         $this->values['time'] = $value;
     }
     /**
-     * 获取系统时间，格式为yyyyMMddHHmmss，如2009年12月27日9点10分10秒表示为20091227091010。其他详见时间规则的mixed
+     * 获取系统时间，格式为yyyyMMddHHmmss，如2009年12月27日9点10分10秒表示为20091227091010。其他详见时间规则的值
      * @return mixed
      **/
     public function GetTime()
@@ -373,10 +362,11 @@ class WxPayReport extends WxPayDataBase
     }
     /**
      * 判断系统时间，格式为yyyyMMddHHmmss，如2009年12月27日9点10分10秒表示为20091227091010。其他详见时间规则是否存在
-     * @return true 或 false
+     * @return bool
      **/
     public function IsTimeSet()
     {
         return array_key_exists('time', $this->values);
     }
+
 }
