@@ -1,6 +1,7 @@
 {
     "name": "studycs/wxpay",
     "type": "library",
+    "license": "ISC",
     "description": "yii2微信支付",
     "authors": [
         {
