@@ -2,6 +2,11 @@
 namespace studycs\wxpay\example;
 use studycs\wxpay\sdk\WxPayConfigInterface;
 
+/**
+ * Class WxPayConfig
+ * @package studycs\wxpay\example
+ *
+ */
 class WxPayConfig extends WxPayConfigInterface
 {
     /**
@@ -12,12 +17,12 @@ class WxPayConfig extends WxPayConfigInterface
      */
     public function GetAppId()
     {
-        return '';
+        return wxPayAppId;
     }
 
     public function GetMerchantId()
     {
-        return '';
+        return wxPayMerchantId;
     }
 
     /**
@@ -61,11 +66,11 @@ class WxPayConfig extends WxPayConfigInterface
 
     public function GetKey()
     {
-        return '';
+        return wxPayKey;
     }
     public function GetAppSecret()
     {
-        return '';
+        return wxPayAppSecret;
     }
 
     /**
@@ -81,7 +86,7 @@ class WxPayConfig extends WxPayConfigInterface
      */
     public function GetSSLCertPath(&$sslCertPath, &$sslKeyPath)
     {
-        $sslCertPath = '../cert/apiclient_cert.pem';
-        $sslKeyPath = '../cert/apiclient_key.pem';
+        $sslCertPath = wxPaySslCertPath;//'../cert/apiclient_cert.pem';
+        $sslKeyPath = wxPaySslKeyPath;//'../cert/apiclient_key.pem';
     }
 }
