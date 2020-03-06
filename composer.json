@@ -16,6 +16,7 @@
       "ext-curl": "*"
     },
     "autoload": {
+      "files": [ "src/qrcode/phpqrcode.php" ],
       "psr-4": {
         "studycs\\wxpay\\": "src/"
       }
